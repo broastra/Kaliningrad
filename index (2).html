@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--
+  Структура: header (фикс) → main (hero + .section блоки) → footer.
+  .section — зелёный фон, оранжевая полоска сверху, padding.
+  Якоря #tours, #ideas, #eat, #info — для навигации.
+-->
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kaliningrad — туры и отдых</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <!-- Шапка: фиксированная навигация, логотип и меню с якорями -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <div class="logo__icon">
+          <img src="./image/logo.webp" alt="Kaliningrad logo">
+        </div>
+        <span class="logo__text">Kaliningrad</span>
+      </div>
+      <button class="menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-btn__line"></span>
+        <span class="menu-btn__line"></span>
+        <span class="menu-btn__line"></span>
+      </button>
+      <div class="menu-mask" aria-hidden="true"></div>
+      <nav class="site-nav" id="main-nav">
+        <a href="#tours" class="site-nav__link">Туры и экскурсии</a>
+        <a href="#ideas" class="site-nav__link">Идеи для отдыха</a>
+        <a href="#eat" class="site-nav__link">Где поесть</a>
+        <a href="#info" class="site-nav__link">Информация</a>
+      </nav>
+    </div>
+  </header>
+   <main>
+    <!-- Hero: фоновое изображение города и главная цитата -->
+    <section class="hero" id="hero">
+      <div class="container hero__content">
+        <p class="hero__text">
+          «Прогуливаясь по Калининграду, ты одновременно в Пруссии, СССР и современной России — и это не фантастика, а реальность».
+        </p>
+      </div>
+    </section>
+
+
+    <!-- События: выбор месяца/года, лента дат (JS), фильтр типа, слайдер карточек -->
+    <section class="section section--green" id="events">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">События</h2>
+          <div class="events__month-wrapper">
+            <select class="events__month-select" name="event-month">
+              <option value="0">Январь</option>
+              <option value="1">Февраль</option>
+              <option value="2">Март</option>
+              <option value="3">Апрель</option>
+              <option value="4">Май</option>
+              <option value="5">Июнь</option>
+              <option value="6">Июль</option>
+              <option value="7">Август</option>
+              <option value="8">Сентябрь</option>
+              <option value="9">Октябрь</option>
+              <option value="10">Ноябрь</option>
+              <option value="11">Декабрь</option>
+            </select>
+            <select class="events__year-select" name="event-year">
+              <option value="2025">2025</option>
+              <option value="2026" selected>2026</option>
+              <option value="2027">2027</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="events__dates">
+          <button class="arrow arrow--small events__dates-prev" type="button">‹</button>
+          <div class="events__dates-list"><!-- Даты подставляются script.js --></div>
+          <button class="arrow arrow--small events__dates-next" type="button">›</button>
+        </div>
+
+        <form class="events__filters">
+          <label class="events__field">
+            <span class="events__label">Тип события</span>
+            <select class="events__select" name="place-type">
+              <option value="all">Все</option>
+              <option value="cinema">Кино под открытым небом</option>
+              <option value="market">Ярмарка</option>
+              <option value="festival">Фестиваль</option>
+            </select>
+          </label>
+        </form>
+
+        <div class="slider slider--events" data-slider="events">
+          <div class="slider__track">
+            <article class="event-card event-card--1" data-type="festival">
+              <div class="event-card__image"></div>
+              <div class="event-card__body">
+                <p class="event-card__text">Билет: <span>500₽</span><br>Фестиваль на тему Гарри Поттера</p>
+                <button type="button" class="event-card__cart" aria-label="В корзину">🛒</button>
+              </div>
+            </article>
+            <article class="event-card event-card--2" data-type="market">
+              <div class="event-card__image"></div>
+              <div class="event-card__body">
+                <p class="event-card__text">Билет: <span>250₽</span><br>Ярмарка, открытая кухня</p>
+                <button type="button" class="event-card__cart" aria-label="В корзину">🛒</button>
+              </div>
+            </article>
+            <article class="event-card event-card--3" data-type="cinema">
+              <div class="event-card__image"></div>
+              <div class="event-card__body">
+                <p class="event-card__text">Билет: <span>750₽</span><br>Кино под открытым небом</p>
+                <button type="button" class="event-card__cart" aria-label="В корзину">🛒</button>
+              </div>
+            </article>
+            <article class="event-card event-card--4" data-type="cinema">
+              <div class="event-card__image"></div>
+              <div class="event-card__body">
+                <p class="event-card__text">Билет: <span>350₽</span><br>Кино под открытым небом</p>
+                <button type="button" class="event-card__cart" aria-label="В корзину">🛒</button>
+              </div>
+            </article>
+            <article class="event-card event-card--5" data-type="market">
+              <div class="event-card__image"></div>
+              <div class="event-card__body">
+                <p class="event-card__text">Билет: <span>50₽</span><br>Ярмарка</p>
+                <button type="button" class="event-card__cart" aria-label="В корзину">🛒</button>
+              </div>
+            </article>
+            <article class="event-card event-card--6" data-type="festival">
+              <div class="event-card__image"></div>
+              <div class="event-card__body">
+                <p class="event-card__text">Билет: <span>1550₽</span><br>Фестиваль “Сити Джаз”</p>
+                <button type="button" class="event-card__cart" aria-label="В корзину">🛒</button>
+              </div>
+            </article>
+          </div>
+          <div class="slider__controls">
+            <button class="arrow slider__arrow slider__arrow--left">‹</button>
+            <button class="arrow slider__arrow slider__arrow--right">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Туры и экскурсии: текст, кнопка бронирования, галерея 2×2 -->
+        <section id="tours" class="section section--green">
+          <div class="container section__split">
+            <div class="section__text">
+              <h2 class="section__title">Туры и экскурсии</h2>
+              <p class="section__description">
+                Знакомство с Калининградом через обзорную экскурсию — отличный способ быстро погрузиться в историю города.
+                Такие экскурсии включают достопримечательности, рассказывают о прошлом Кёнигсберга и современном Калининграде.
+              </p>
+              <button class="btn">Забронировать</button>
+            </div>
+            <div class="slider slider--tours" data-slider="tours" data-mode="mobile">
+              <div class="slider__track gallery">
+                <figure class="gallery__figure">
+                  <div class="gallery__item gallery__item--t1"></div>
+                  <figcaption class="gallery__caption">Мост Королевы Луизы — исторический мост через реку Преголю</figcaption>
+                </figure>
+                <figure class="gallery__figure">
+                  <div class="gallery__item gallery__item--t2"></div>
+                  <figcaption class="gallery__caption">Бранденбургские ворота — памятник архитектуры XVIII века</figcaption>
+                </figure>
+                <figure class="gallery__figure">
+                  <div class="gallery__item gallery__item--t3"></div>
+                  <figcaption class="gallery__caption">Новая синагога — современный центр еврейской общины</figcaption>
+                </figure>
+                <figure class="gallery__figure">
+                  <div class="gallery__item gallery__item--t4"></div>
+                  <figcaption class="gallery__caption">Музей янтаря — уникальная коллекция балтийского янтаря</figcaption>
+                </figure>
+              </div>
+              <div class="slider__controls">
+                <button class="arrow slider__arrow slider__arrow--left" type="button" aria-label="Предыдущий слайд">‹</button>
+                <button class="arrow slider__arrow slider__arrow--right" type="button" aria-label="Следующий слайд">›</button>
+              </div>
+            </div>
+            <button class="btn tours__cta" type="button">Забронировать</button>
+          </div>
+    
+        </section>
+    <!-- Лучшие идеи: сетка из 4 карточек с заголовками -->
+    <section id="ideas" class="section section--green">
+      <div class="container">
+        <h2 class="section__title">Лучшие идеи для отдыха</h2>
+        <div class="slider slider--ideas" data-slider="ideas" data-mode="mobile">
+          <div class="slider__track">
+            <article class="card">
+              <div class="card__image card__image--idea1"></div>
+              <h3 class="card__title">Фестиваль на открытом воздухе</h3>
+            </article>
+            <article class="card">
+              <div class="card__image card__image--idea2"></div>
+              <h3 class="card__title">Пикник у Кафедрального собора</h3>
+            </article>
+            <article class="card">
+              <div class="card__image card__image--idea3"></div>
+              <h3 class="card__title">Посетить достопримечательности</h3>
+            </article>
+            <article class="card">
+              <div class="card__image card__image--idea4"></div>
+              <h3 class="card__title">Сходить в кафе</h3>
+            </article>
+          </div>
+          <div class="slider__controls">
+            <button class="arrow slider__arrow slider__arrow--left" type="button" aria-label="Предыдущий слайд">‹</button>
+            <button class="arrow slider__arrow slider__arrow--right" type="button" aria-label="Следующий слайд">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Где поесть: слайдер карточек заведений с адресом и чеком -->
+        <section id="eat" class="section section--green">
+          <div class="container">
+            <div class="section__header">
+              <h2 class="section__title">Где поесть</h2>
+
+            <select class="events__select" name="event-type">
+              <option value="all">Тип заведения</option>
+              <option value="coffe">Кофейня</option>
+              <option value="baker">Пекарня</option>
+              <option value="bar">Бар</option>
+            </select>
+            </div>
+    
+            <div class="slider slider--eat" data-slider="eat">
+              <div class="slider__track">
+                <article class="eat-card eat-card--1" data-type="bar">
+                  <div class="eat-card__image"></div>
+                  <p class="eat-card__caption">
+                    📍 ул. Октябрьская, 4<br>
+                    Средний чек: 1500–1850₽
+                  </p>
+                </article>
+                <article class="eat-card eat-card--2" data-type="baker">
+                  <div class="eat-card__image"></div>
+                  <p class="eat-card__caption">
+                    📍 ул. Чкалова, 1, 1 этаж<br>
+                    Средний чек: 500–850₽
+                  </p>
+                </article>
+                <article class="eat-card eat-card--3" data-type="coffe">
+                  <div class="eat-card__image"></div>
+                  <p class="eat-card__caption">
+                    📍 ул. Проспект Победы, 2Б<br>
+                    Средний чек: 1000–1450₽
+                  </p>
+                </article>
+                <article class="eat-card eat-card--4" data-type="coffe">
+                  <div class="eat-card__image"></div>
+                  <p class="eat-card__caption">
+                    📍 ул. Проспект Мира, 13Б<br>
+                    Средний чек: 1200-1550₽
+                  </p>
+                </article>
+              </div>
+              <div class="slider__controls">
+                <button class="arrow slider__arrow slider__arrow--left">‹</button>
+                <button class="arrow slider__arrow slider__arrow--right">›</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+ <!-- Отзывы: карточка с фото, текстом и стрелками навигации -->
+ <section id="reviews" class="section section--green">
+  <div class="container reviews">
+    <h2 class="section__title">Отзывы</h2>
+    <div class="reviews__content">
+      <div class="reviews__card">
+        <div class="reviews__person">
+          <div class="reviews__photo"></div>
+          <p class="reviews__author">Алтан Шагай</p>
+        </div>
+        <div class="reviews__text">
+          <p>
+            Сайт — отличный помощник в планировании поездки: удобная структура, актуальные цены.
+            Понравилось наличие отзывов путешественников и быстрое онлайн-бронирование. Поддержка отвечает оперативно.
+          </p>
+          <p>
+            Итог: надёжный сервис с широким выбором туров. Рекомендую.
+          </p>
+        </div>
+      </div>
+      <div class="reviews__controls">
+        <button class="arrow reviews__arrow" type="button" aria-label="Предыдущий отзыв">‹</button>
+        <button class="arrow reviews__arrow" type="button" aria-label="Следующий отзыв">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Форма связи: телефон, имя, почта, чекбокс согласия, отправка -->
+<section id="info" class="section section--green section--centered">
+  <div class="container form-block">
+    <h2 class="section__title">Оставьте свои данные</h2>
+    <p class="section__description">Свяжемся с вами в ближайшее время</p>
+    <form class="form">
+      <label class="form__field">
+        <input type="tel" placeholder="Введите номер телефона" required>
+      </label>
+      <label class="form__field">
+        <input type="text" placeholder="Введите имя" required>
+      </label>
+      <label class="form__field">
+        <input type="email" placeholder="Введите почту" required>
+      </label>
+      <label class="form__checkbox">
+        <input type="checkbox" required>
+        <span>«Я согласен(на) с Политикой конфиденциальности и даю согласие на обработку персональных данных»</span>
+      </label>
+      <button type="submit" class="btn btn--wide">Отправить</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- Футер: контакты, навигация, форма подписки -->
+<footer class="footer">
+<div class="container footer__inner">
+  <div class="footer__column">
+    <h3 class="footer__title">Контакты</h3>
+    <p class="footer__text">
+      📍 ул. Савушкина, 45а, 2 этаж<br>
+      ежедневно с 20:00–6:00
+    </p>
+    <p class="footer__text">
+      +7 (988) 593-62-33<br>
+      muhamed.kajran@gmail.com
+    </p>
+  </div>
+  <div class="footer__column">
+    <h3 class="footer__title">Навигация</h3>
+    <a href="#hero" class="footer__link">Главная</a>
+    <a href="#ideas" class="footer__link">Идеи для отдыха</a>
+    <a href="#tours" class="footer__link">Туры и экскурсии</a>
+    <a href="#eat" class="footer__link">Где поесть</a>
+  </div>
+  <div class="footer__column">
+    <h3 class="footer__title">Подпишитесь на рассылку</h3>
+    <form class="footer__form">
+      <input type="email" class="footer__input" placeholder="Ваш email">
+      <button class="btn btn--small" type="submit">Подписаться</button>
+    </form>
+    <p class="footer__small">
+      Нажимая на кнопку «Подписаться», вы принимаете Соглашение об обработке персональных данных
+    </p>
+  </div>
+</div>
+</footer>
+    <!-- Подключение скриптов: слайдеры, календарь дат -->
+    <script src="script.js"></script>
+</body>
+</html>
