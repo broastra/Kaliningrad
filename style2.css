@@ -256,7 +256,7 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
   .section__split { grid-template-columns: 1fr; gap: 32px; }
   .section__header { flex-wrap: wrap; }
   .site-nav { gap: 40px; }
-  .hero { padding-bottom: 120px; background-image: url("./image/heromobile.webp"); }
+  .hero { padding-bottom: 120px; background-image: url("./heromobile.webp"); }
   .hero__text { font-size: 20px; }
   .slider--ideas .slider__track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .reviews__card { grid-template-columns: 160px 1fr; gap: 20px; padding: 20px; }
