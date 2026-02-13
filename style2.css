@@ -67,7 +67,7 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
 .hero {
   position: relative;
   min-height: 100vh;
-  background: url("./image/hero.webp") center/cover no-repeat;
+  background: url("./hero.webp") center/cover no-repeat;
   display: flex; align-items: flex-end;
   padding-bottom: 296px;
 }
