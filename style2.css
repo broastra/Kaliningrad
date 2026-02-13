@@ -162,12 +162,12 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
   align-items: center;
 }
 .event-card__text span { color: var(--accent-light); font-weight: 600; }
-.event-card--1 .event-card__image { background-image: url("./image/event-card--1.webp"); }
-.event-card--2 .event-card__image { background-image: url("./image/event-card--2.webp"); }
-.event-card--3 .event-card__image { background-image: url("./image/event-card--3.webp"); }
-.event-card--4 .event-card__image { background-image: url("./image/event-card--4.webp"); }
-.event-card--5 .event-card__image { background-image: url("./image/event-card--5.webp"); }
-.event-card--6 .event-card__image { background-image: url("./image/event-card--6.webp"); }
+.event-card--1 .event-card__image { background-image: url("./event-card--1.webp"); }
+.event-card--2 .event-card__image { background-image: url("./event-card--2.webp"); }
+.event-card--3 .event-card__image { background-image: url("./event-card--3.webp"); }
+.event-card--4 .event-card__image { background-image: url("./event-card--4.webp"); }
+.event-card--5 .event-card__image { background-image: url("./event-card--5.webp"); }
+.event-card--6 .event-card__image { background-image: url("./event-card--6.webp"); }
 
 /* ========== ТУРЫ — галерея 2×2 с описаниями ========== */
 .slider--tours .slider__track {
@@ -180,10 +180,10 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
 .gallery__item { aspect-ratio: 4/5; min-height: 180px; border-radius: var(--radius-lg); background-size: cover; background-position: center; box-shadow: var(--shadow); }
 .gallery__figure { margin: 0; }
 .gallery__caption { margin-top: 10px; font-size: 14px; color: var(--text-muted); line-height: 1.4; }
-.gallery__item--t1 { background-image: url("./image/gallery__item--t1.webp"); }
-.gallery__item--t2 { background-image: url("./image/gallery__item--t2.webp"); }
-.gallery__item--t3 { background-image: url("./image/gallery__item--t3.webp"); }
-.gallery__item--t4 { background-image: url("./image/gallery__item--t4.webp"); }
+.gallery__item--t1 { background-image: url("./gallery__item--t1.webp"); }
+.gallery__item--t2 { background-image: url("./gallery__item--t2.webp"); }
+.gallery__item--t3 { background-image: url("./gallery__item--t3.webp"); }
+.gallery__item--t4 { background-image: url("./gallery__item--t4.webp"); }
 
 /* ========== ЛУЧШИЕ ИДЕИ — сетка 4 колонки ========== */
 .slider--ideas .slider__track {
@@ -195,10 +195,10 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
 .card { background: transparent; }
 .card__image { aspect-ratio: 4/5; min-height: 180px; border-radius: var(--radius-lg); background-size: cover; background-position: center; box-shadow: var(--shadow); margin-bottom: 12px; }
 .card__title { margin: 0; font-size: 16px; font-weight: 500; }
-.card__image--idea1 { background-image: url("./image/gallery__item--t5.webp"); }
-.card__image--idea2 { background-image: url("./image/gallery__item--t6.webp"); }
-.card__image--idea3 { background-image: url("./image/gallery__item--t7.webp"); }
-.card__image--idea4 { background-image: url("./image/gallery__item--t8.webp"); }
+.card__image--idea1 { background-image: url("./gallery__item--t5.webp"); }
+.card__image--idea2 { background-image: url("./gallery__item--t6.webp"); }
+.card__image--idea3 { background-image: url("./gallery__item--t7.webp"); }
+.card__image--idea4 { background-image: url("./gallery__item--t8.webp"); }
 
 /* ========== ГДЕ ПОЕСТЬ ========== */
 .eat-card {
@@ -207,10 +207,10 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
 }
 .eat-card__image { aspect-ratio: 3/4; min-height: 200px; background-size: cover; background-position: center; }
 .eat-card__caption { margin: 10px 12px 12px; font-size: 13px; }
-.eat-card--1 .eat-card__image { background-image: url("./image/eat-card--1.webp"); }
-.eat-card--2 .eat-card__image { background-image: url("./image/eat-card--2.webp"); }
-.eat-card--3 .eat-card__image { background-image: url("./image/eat-card--3.webp"); }
-.eat-card--4 .eat-card__image { background-image: url("./image/eat-card--4.webp"); }
+.eat-card--1 .eat-card__image { background-image: url("./eat-card--1.webp"); }
+.eat-card--2 .eat-card__image { background-image: url("./eat-card--2.webp"); }
+.eat-card--3 .eat-card__image { background-image: url("./eat-card--3.webp"); }
+.eat-card--4 .eat-card__image { background-image: url("./eat-card--4.webp"); }
 
 /* ========== ОТЗЫВЫ ========== */
 .reviews { max-width: 960px; }
@@ -222,7 +222,7 @@ button, input, select, textarea { font-family: "Montserrat", system-ui, sans-ser
 .reviews__person { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .reviews__photo {
   border-radius: 18px;
-  background: url("./image/1234567890.webp") center/cover no-repeat rgba(255,255,255,0.12);
+  background: url("./1234567890.webp") center/cover no-repeat rgba(255,255,255,0.12);
   border-radius: 122px;
   aspect-ratio: 1;
   min-height: 180px;
